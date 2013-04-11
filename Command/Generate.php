@@ -25,7 +25,7 @@ class Generate extends Command
     {
         $this
                 ->setName('generate')
-                ->setDescription('Make the job !');
+                ->setDescription('Transforms all twig in ./input/ in ./web');
     }
 
     protected function initialize(InputInterface $input, OutputInterface $output)
@@ -51,6 +51,12 @@ class Generate extends Command
             $target = $targetDir . $fch->getBasename('.twig');
             $fs->touch($target);
             file_put_contents($target, $this->twig->render($source));
+        }
+        // And Now for Something Completely Different
+        $baseDir = $this->appRoot . '/Resources/template/';
+        $targetDir = $this->appRoot . "/web/";
+        foreach (array('css', 'img', 'js') as $asset) {
+            $fs->symlink($baseDir . $asset, $targetDir . $asset);
         }
     }
 
