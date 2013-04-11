@@ -5,11 +5,11 @@
  *
  */
 
-namespace Trismegiste\Phytostatic;
+namespace Trismegiste\Twitwi;
 
 require_once 'vendor/autoload.php';
 
-use Trismegiste\Phytostatic\Command\Generate;
+use Trismegiste\Twitwi\Command\Generate;
 use Symfony\Component\Console\Application;
 
 $application = new Application();

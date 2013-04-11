@@ -1,5 +1,5 @@
 {
-    "name": "trismegiste/phytostatic",
+    "name": "trismegiste/twitwi",
     "description": "My own static page generator based on twig and that's all",
     "require": {
         "php": ">=5.3.8",
@@ -18,8 +18,8 @@
     "minimum-stability": "alpha",
     "autoload": {
         "psr-0": {
-            "Trismegiste\\Phytostatic": ""
+            "Trismegiste\\Twitwi": ""
         }
     },
-    "target-dir": "Trismegiste/Phytostatic"
+    "target-dir": "Trismegiste/Twitwi"
 }

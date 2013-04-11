@@ -1,10 +1,10 @@
 <?php
 
 /*
- * Phytostatic
+ * Twitwi
  */
 
-namespace Trismegiste\Phytostatic\Command;
+namespace Trismegiste\Twitwi\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -21,7 +21,7 @@ class Generate extends Command
     protected function configure()
     {
         $this
-                ->setName('phyto:gene')
+                ->setName('generate')
                 ->setDescription('Make the job !');
     }
 
