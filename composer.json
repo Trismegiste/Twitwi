@@ -5,6 +5,7 @@
         "php": ">=5.3.8",
         "symfony/console": "2.2.x-dev",
         "symfony/finder": "2.2.x-dev",
+        "symfony/filesystem": "2.2.x-dev",
         "twig/twig": "1.*"
     },
     "license": "CC-BY-SA-3.0",
