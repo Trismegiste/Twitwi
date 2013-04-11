@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>{% block page_title 'Project name' %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -41,6 +41,7 @@
                     <a class="brand" href="#">{% block project_name 'Project name' %}</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
+                            {% block navigation_menu %}
                             <li class="active"><a href="#">Home</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#contact">Contact</a></li>
@@ -56,6 +57,7 @@
                                     <li><a href="#">One more separated link</a></li>
                                 </ul>
                             </li>
+                            {% endblock %}
                         </ul>
                         {% block authentication %}
                         <form class="navbar-form pull-right">
@@ -74,9 +76,7 @@
 
             {% block content %}
             {% include 'hero.html.twig' %}
-
             {% include 'three_column_streamer.html.twig' %}
-
             {% endblock %}
 
             <hr>

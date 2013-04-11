@@ -16,6 +16,17 @@ All I want is a generator "a-la-copy-paste" based on things I already know :
 
 (hence the fancy name)
 
+## What for ?
+
+This is a one shot app for generating documentation for my other github projects.
+This also was a fun way to use the excellent components made by Sensio (Finder,
+Console, Twig and Filesystem).
+
+## What's next ?
+
+I don't know, perhaps make a theme with zurb/fundation and a phar with some
+parameters in the command line.
+
 [1]: http://en.wikipedia.org/wiki/Not_invented_here
 [2]: http://twig.sensiolabs.org/doc/templates.html
 [3]: http://html5boilerplate.com

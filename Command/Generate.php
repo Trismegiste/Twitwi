@@ -9,6 +9,7 @@ namespace Trismegiste\Twitwi\Command;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Filesystem\Filesystem;
 
@@ -20,19 +21,22 @@ class Generate extends Command
 
     protected $twig;
     protected $appRoot;
+    protected $srcDir;
 
     protected function configure()
     {
         $this
                 ->setName('generate')
-                ->setDescription('Transforms all twig in ./input/ in ./web');
+                ->setDescription('Transforms all twig in ./input/ in ./web')
+                ->addArgument('srcDir', InputArgument::REQUIRED, 'the source directory for content');
     }
 
     protected function initialize(InputInterface $input, OutputInterface $output)
     {
         $this->appRoot = dirname(__DIR__);
+        $this->srcDir = $input->getArgument('srcDir');        
         $templatePath = array(
-            $this->appRoot . '/Resources/input',
+            $this->srcDir,
             $this->appRoot . '/Resources/template'
         );
         $loader = new \Twig_Loader_Filesystem($templatePath);
@@ -43,7 +47,7 @@ class Generate extends Command
     {
         $scan = new Finder();
         $fs = new Filesystem();
-        $scan->files()->in($this->appRoot . '/Resources/input')->name('*.html.twig');
+        $scan->files()->in($this->srcDir)->name('*.html.twig');
         foreach ($scan as $fch) {
             $source = $fch->getRelativePathname();
             $targetDir = $this->appRoot . "/web/" . $fch->getRelativePath();
@@ -56,7 +60,7 @@ class Generate extends Command
         $baseDir = $this->appRoot . '/Resources/template/';
         $targetDir = $this->appRoot . "/web/";
         foreach (array('css', 'img', 'js') as $asset) {
-            $fs->symlink($baseDir . $asset, $targetDir . $asset);
+            $fs->mirror($baseDir . $asset, $targetDir . $asset);
         }
     }
 
