@@ -1,0 +1,18 @@
+{
+    "name": "trismegiste/phytostatic",
+    "description": "My own static page generator based on twig and that's all",
+    "require": {
+        "php": ">=5.3.8",
+        "symfony/console": "2.2.x-dev",
+        "symfony/finder": "2.2.x-dev",
+        "twig/twig": "1.*"
+    },
+    "license": "CC-BY-SA",
+    "authors": [
+        {
+            "name": "Trismegiste",
+            "email": "florent.g@allopneus.com"
+        }
+    ],
+    "minimum-stability": "alpha"
+}
