@@ -34,7 +34,7 @@ class Generate extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        echo $this->twig->render('index.html', array('name' => 'Fabien'));
+        echo $this->twig->render('index.html.twig', array('name' => 'Fabien'));
     }
 
 }

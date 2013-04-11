@@ -5,6 +5,11 @@ My own static page generator based on Twig
 
 ## Not Invented Here
 
-That's right, but I don't want a multi-paradigm, multi-user, multi-config static pages
-generator. All I want is a copy-paste generator based on Twig and Twitter bootstrap.
+That's right, like Sculpin or Phrozn, but I did not want a multi-paradigm, multi-user, multi-plateform static pages
+generator with multiple languages and multiple configurations.
+
+All I want is a copy-paste generator based on things I already know :
+ * Twig
+ * Twitter bootstrap
+
 (hence the name)
