@@ -27,7 +27,7 @@ class Generate extends Command
     {
         $this
                 ->setName('generate')
-                ->setDescription('Transforms all twig in ./input/ in ./web')
+                ->setDescription('Transforms all twig from <srcDir> into ./web')
                 ->addArgument('srcDir', InputArgument::REQUIRED, 'the source directory for content');
     }
 
