@@ -7,12 +7,19 @@
         "symfony/finder": "2.2.x-dev",
         "twig/twig": "1.*"
     },
-    "license": "CC-BY-SA",
+    "license": "CC-BY-SA-3.0",
+    "version": "0.1",
     "authors": [
-        {
-            "name": "Trismegiste",
-            "email": "florent.g@allopneus.com"
-        }
+    {
+        "name": "Trismegiste",
+        "email": "florent.g@allopneus.com"
+    }
     ],
-    "minimum-stability": "alpha"
+    "minimum-stability": "alpha",
+    "autoload": {
+        "psr-0": {
+            "Trismegiste\\Phytostatic": ""
+        }
+    },
+    "target-dir": "Trismegiste/Phytostatic"
 }
