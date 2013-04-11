@@ -16,6 +16,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 class Generate extends Command
 {
 
+    protected $twig;
+
     protected function configure()
     {
         $this
@@ -23,9 +25,16 @@ class Generate extends Command
                 ->setDescription('Make the job !');
     }
 
+    protected function initialize(InputInterface $input, OutputInterface $output)
+    {
+        $templatePath = dirname(__DIR__) . '/Resources/template';
+        $loader = new \Twig_Loader_Filesystem($templatePath);
+        $this->twig = new \Twig_Environment($loader);
+    }
+
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        echo "nothing";
+        echo $this->twig->render('index.html', array('name' => 'Fabien'));
     }
 
 }
