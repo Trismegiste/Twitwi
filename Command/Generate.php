@@ -27,14 +27,17 @@ class Generate extends Command
     {
         $this
                 ->setName('generate')
-                ->setDescription('Transforms all twig from <srcDir> into ./web')
-                ->addArgument('srcDir', InputArgument::REQUIRED, 'the source directory for content');
+                ->setDescription('Recursively transforms all *.html.twig from <srcDir> into ./web')
+                ->addArgument('srcDir', InputArgument::REQUIRED, 'the source directory for content (*.html.twig)')
+                ->setHelp('Uses the Twig engine to transform all files ending by *.html.twig from <srcDir>' . PHP_EOL
+                        . 'and puts the resulting html files into ./web. It also does a copy of 3 assets' . PHP_EOL
+                        . 'directories from ./Resources/template [img,css,js].' . PHP_EOL);
     }
 
     protected function initialize(InputInterface $input, OutputInterface $output)
     {
         $this->appRoot = dirname(__DIR__);
-        $this->srcDir = $input->getArgument('srcDir');        
+        $this->srcDir = $input->getArgument('srcDir');
         $templatePath = array(
             $this->srcDir,
             $this->appRoot . '/Resources/template'
